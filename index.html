@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en" ng-app>
+<head>
+    <title>Relational Algebra Arcade</title>
+    <script data-main="lib/relalg/main" src="bower_components/requirejs/require.js"></script>
+    <link type="text/css" rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="./css/main.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="./css/popup.css" media="screen">
+    <script type="text/javascript" src="bower_components/jquery/jquery.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.7/angular.min.js"></script>
+    <script type="text/javascript" src="js/rdtheory.js"></script>
+    <script type="text/javascript" src="js/fd.js"></script>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css" />
+</head>
+
+<body>
+    <div class="container" role="main">
+        <div id="tabs" class="nav-bar">
+            <ul>
+                <li><a href="#gameContent">Algebra Arcade</a>
+                </li>
+                <li><a href="tutorials/relationsTut.html">Relations</a>
+                </li>
+                <li><a href="#raTutorial">RA Operations</a>
+                </li>
+                <li><a href="#functionalDepTutorial">Functional Dependencies</a>
+                </li>
+                <li><a href="tutorials/setsvbags.html">Sets vs. Bags</a>
+                </li>
+                <li><a href="tutorials/ratosql.html">RA to SQL</a>
+                </li>
+            </ul>
+            
+            <!-- Tutorial section on different relational algebra operations -->
+            <section id="raTutorial" class="tabSection">
+                <div id="raTabs">
+                    <ul>
+                        <li><a href="tutorials/raOperators/crossjointut.html">Cross Join</a>
+                        </li>
+                        <li><a href="tutorials/raOperators/projecttut.html">Project</a>
+                        </li>
+                        <li><a href="tutorials/raOperators/uniontut.html">Union</a>
+                        </li>
+                        <li><a href="tutorials/raOperators/differencetut.html">Difference</a>
+                        </li>
+                        <li><a href="tutorials/raOperators/intersecttut.html">Intersect</a>
+                        </li>
+                        <li><a href="tutorials/raOperators/selecttut.html">Select</a>
+                        </li>
+                        <li><a href="tutorials/raOperators/renametut.html">Rename</a>
+                        </li>
+                        <li><a href="tutorials/raOperators/naturaljointut.html">Natural Join</a>
+                        </li>
+                        <li><a href="tutorials/raOperators/sorttut.html">Sort</a>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Functional Dependencies component, currently non-functional-->
+            <section id="functionalDepTutorial" style="background:white;padding:10px 5px;" class="tabSection tutorial">
+                <h2 class="tutorialHeader">Functional Dependencies <span class="label label-danger">Currently Not Supported</span></h2>
+                
+                <div ng-controller="SchemaCtrl">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-5">
+                                <h3>Attributes</h3>
+                                <ul class="list-inline">
+                                    <li ng-repeat="attr in attributes">
+
+                                        <span class="btn btn-default btn-sm" ng-click="removeAttribute(attr)"><span class="glyphicon glyphicon-remove"></span> {{attr}}</span>
+                                    </li>
+
+                                </ul>
+                                <hr />
+                                <form ng-submit="addAttribute()" width="100%">
+                                    <div class="row">
+                                        <div class="col-sm-10">
+                                            <input class="form-control" ng-model="attributeText" id="attributeInput" placeholder="Attribute name" />
+                                        </div>
+                                        <div class="col-sm-2">
+                                            <input type="submit" class="btn btn-default" value="Add" />
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+
+                            <div class="col-md-6 col-md-offset-1">
+                                <h3>Functional Dependencies</h3>
+                                
+                                <table class="table">
+                                    <thead>
+                                        <th>LHS</th>
+                                        <th>RHS</th>
+                                        <th>Remove</th>
+                                    </thead>
+
+                                    <tbody id="fds">
+                                        <tr ng-repeat="fd in fds">
+                                            <td><span ng-repeat="a in fd.lhs">{ {{a}} }</span>
+                                            </td>
+                                            <td><span ng-repeat="a in fd.rhs">{ {{a}} }</span>
+                                            </td>
+                                            <td><a ng-click="removeFD(fd)" class="btn btn-danger">Remove</a>
+                                        </tr>
+
+                                    </tbody>
+
+                                </table>
+                                <hr />
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <strong>Left-hand side</strong>
+                                        <ul ng-repeat="attr in currentLHS">
+                                            <li>{{attr}}</li>
+                                        </ul>
+                                        <form class="form-inline" ng-submit="addLHSAttribute()" width="100%">
+                                            <select class="form-control" ng-model="lhs" ng-options="item as item for item in attributes"></select>
+                                            <input type="submit" class="btn btn-default" value="Add to LHS" />
+                                        </form>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <strong>Right-hand side</strong>
+                                        <ul ng-repeat="attr in currentRHS">
+                                            <li>{{attr}}</li>
+                                        </ul>
+                                        <form class="form-inline" ng-submit="addRHSAttribute()" width="100%">
+                                            <select class="form-control" ng-model="rhs" ng-options="item as item for item in attributes"></select>
+                                            <input type="submit" class="btn btn-default" value="Add to RHS" />
+                                        </form>
+                                    </div>
+
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-12" align="right">
+                                        <a class="btn btn-default" ng-click="addFD()">Add FD</a>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+            <!-- Used as the unifying component that changes the game mode -->
+            <section id="rsetsBagsTutorial" class="tabSection">
+            </section>
+            <!-- Tutorial on applying relational algebra concepts to learn SQL -->
+            <section id="raTosql" class="tabSection">
+            </section>
+
+            <section id="gameContent" class="tabSection">
+                <!-- Used as the unifying component that changes the game mode -->
+                <div id="arcadeController">
+                    <!-- Buttons To Switch Between Modes -->
+                    <div class="row">
+                        <div class="btn-group btn-group-md">
+                            <button class="btn btn-default" id="playgroundButton">Playground</button>
+                            <button class="btn btn-default" id="arcadeButton">Arcade</button>
+                        </div>
+                    </div>
+                    <!-- Used as main point for hints, questions, instructions, etc. -->
+                    <div class="directive">
+                    </div>
+
+                    <!-- UI for selecting levels -->
+                    <div id="levelListContainer">
+                        <ul id="levelLists">
+                            <li id="beginnerList">
+                                <h3 data-list="beginner" class="levelListHeader">Beginner</h3>
+                                <ul class="levelList beginner">
+                                </ul>
+                            </li>
+                            <li id="intermediateList">
+                                <h3 class="levelListHeader">Intermediate</h3>
+                                <ul class="levelList intermediate">
+                                </ul>
+                            </li>
+                            <li id="advancedList">
+                                <h3 class="levelListHeader">Advanced</h3>
+                                <ul class="levelList advanced">
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+
+
+                <!-- UI for choosing current Data Set -->
+                <div id="set-selector">
+                    <span>Datasets:</span>
+                    <ul style="display:inline;" id="datasetList">
+                    </ul>
+                </div>
+
+                <!-- UI for choosing viewed relation -->
+                <div class="row">
+                    <div class="col-md-2">
+                        <div id="relationList">
+                            <ul class="list">
+                                <li>Relations</li>
+                                <li class="divider"></li>
+                                <li style="text-align: center">
+                                    <div class="btn-group btn-group-sm">
+                                        <button class="btn btn-default add"><i class="icon-plus"></i>Add</button>
+                                        <button class="btn btn-default remove"><i class="icon-trash"></i>Remove</button>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-10" id="relationView">
+                        <h1></h1>
+                        <table class="table table-bordered table-hover">
+                            <thead>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+                        <button class="btn btn-default btn-sm addRow">Add Row</button>
+                        <button class="btn btn-default btn-sm addColumn">Add Column</button>
+                    </div>
+                </div>
+
+                <!-- Relational Algebra Editor -->
+                <div id="input">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-8 col-md-offset-2">
+                                <div id="editor">Result :=</div>
+                            </div>
+                            <div class="col-md-2">
+                                <ul class="list-unstyled actions">
+                                    <li>
+                                        <button class="btn btn-primary evaluate">Evaluate</button>
+                                    </li>
+                                    <li>
+                                        <button class="btn btn-default graph">Graph</button>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hidden component used to display Expression Tree  -->
+                <div id="graph" class="graph-box modal" role="dialog" aria-labelledby="exprGraph" aria-hidden="true" tabindex="-1">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;
+                                </button>
+                                <h4 class="modal-title" id="exprGraph">RA Expression Tree</h4>
+                            </div>
+                            <div class="modal-body"></div>
+                            <div class="modal-footer"></div>
+                        </div>
+                    </div>
+                </div>
+                <div id="graph-staging"></div>
+            </section>
+        </div>
+    </div>
+
+    <footer>
+        <small> Relational Algebra Arcade &copy; by Adel Lahlou </small>
+    </footer>
+</body>
+
+</html>

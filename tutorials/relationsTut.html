@@ -1,0 +1,43 @@
+<section class="tabSection" id="relationsTut">
+    <article class="tutorial">
+        <h2 class="tutorialHeader">Relations Overview</h2>
+        <section class="info">
+            <h4>Why learn about Relations, Relational Algebra, and SQL?</h4>
+            <p>Data representation, storage, and management are some of the greatest components of modern programs and online services. Most of these different components are accomplished through the use of databases, with relational databases being the most commonly used type. Many services you utilize everyday such as online-stores, social media, and blogs utilize relational databases to manage the copious data exchange in our modern data driven world.</p>
+        </section>
+        <section class="info">
+            <h4>What are Relations?</h4>
+            <p>Relations are a way to structure the data of different entities that naturally lends itself to organizing the relationships between entities. In our example Movies relation above, we see that each row contains data that corresponds to a specific Movie entity. Relations are commonly visualized as tables and we will now use the two terms interchangeably. </p>
+            <p> As you can imagine, this relational model is a powerful, simple mode for data representation and storage. With the addition of relational algebra, we are able to query the relations for specific data simply and quickly. These concepts are the basis of Relational Database Management Systems (RBDMS) such as MySQL, Oracle, PostGreSQL. RDBMS’s usually extend the functionality of relations and relational algebra through Structured Query Language (SQL), a declarative language that operates over bags of data.</p>
+        </section>
+
+        <section class="info">
+            <h4>Important Vocabulary for Relations and Relational Algebra</h4>
+            <dl>
+                <dt>Set Terminology:</dt>
+                <dd>An unordered set is a group of unique elements. Unordered means that these two sets Foo = {1, 2, 3} and Bar = {2, 1, 3} are equivalent. A subset of a set Foo is any set that only contains elements of Foo. This means that {1}, {2, 1} and Bar are all subsets of Foo. It also to have a set of sets.</dd>
+
+                <dt>N-Tuple:</dt>
+                <dd>Is a totally-ordered set of n values. They are the rows in our example above and each row represents a movie. Note that {a, b, a}is still a 3-tuple and would not be reduced to {a, b} despite being a set (since it is totally-ordered). We will use tuple and row interchangeably.</dd>
+
+                <dt>Domain:</dt>
+                <dd>An elementary type such as integer or string. Domains also define the limits of these types, similar to how 32-bit integers are limited to representing 2^32 different values.</dd>
+
+                <dt>Atomic:</dt>
+                <dd>When a value is atomic, that means that is part of a certain domain. This restricts a value to only elementary types such as strings, integers, or dates and outlaws data types such entire tuples, arrays, or instances of objects, which contain many values. Note that some RDBMS are optimized for Object-Oriented data, but will not be discussed in this Arcade.</dd>
+
+                <dt>Attributes:</dt>
+                <dd> An attribute is a pair (name, domain). Note that the domain must be atomic. In our example above, an attribute is the column of the table and their respective domain. These different attributes in our example are title:string, genre:string, year:int, and length:int.</dd>
+
+                <dt>Component Value:</dt>
+                <dd>A component is just the specific value of attribute within a row. In our example, a component value of attribute title within the X row is Gone with the Wind.</dd>
+
+                <dt>Schemas/Header:</dt>
+                <dd>A schema represents the name of the relation, the set of attributes and their corresponding domains. This structure of a relation is formed as: RelationName(atrribute1Name:domain, attribute2:domain). This is also sometimes refrred to as the header.</dd>
+
+                <dt>Key:</dt>
+                <dd>A key is a subset of the attributes of a relation that are guaranteed to be unique between the tuples within a relation. Movies() Note: The key is underlined In our Movies example, we assert that the set {title, year} is a key for each tuple meaning no two movies with the same name and same release year will be represented in that relation. While this assertion makes sense (it would be an advertising disaster for two same named movies to come out the same year) we cannot guarantee that this will hold more all movies created ever. Sometimes it is difficult to find something unique between all tuples, so a generic one is created (think Social Security or ID number). Note that there can be more than one key per relation, but one is typically selected as the Primary Key.</dd>
+            </dl>
+        </section>
+    </article>
+</section>

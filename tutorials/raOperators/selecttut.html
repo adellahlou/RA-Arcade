@@ -1,0 +1,31 @@
+<section class="opInfo" id="selectInfo">
+    <h2 class="raHeader">Select</h2>
+    <span class="affectLevel">Tuple Level</span>
+
+    <div class="syntaxDisplay info">
+        <h4 class="syntaxHeader">Syntax: </h4>
+        <span class="writtenSyntax">Written Syntax: σ <sub>&lt;conditions&gt;</sub>(Relation)</span>
+        <span class="arcadeSyntax">Arcade Syntax: Select[cond1 logical-operator cond2](Relation)</span>
+    </div>
+
+    <section class="opDef info">
+        <h4>Operation Definition</h4>
+        <p class="opDef">
+            This unary operator returns a subset of the tuples of a relation based on a Boolean condition expression C, which evaluates using the component values of each tuple. This operation requires:
+        </p>
+        <ol class="opReqs">
+            <li>1) C, an expression that evaluates very similarly to an if statement in C-like languages. It can consist of typical comparison operators such as &gt;, &lt;, != as well as conjunctions such as AND, OR, and NOT. Note that these select statements are typically evaluated at the intra-tuple level. For example, let there be a relation Foo(A, B, C) and we wish to SELECT[A &gt; 4 AND B =’on’](Foo). These comparisons are done row by row, checking each row if the component value of A is greater than 4 and the B is equal to ‘on’.</li>
+            <li>2) R – a relation to select from.</li>
+        </ol>
+    </section>
+
+    <section class="usefulness info">
+        <h4>Usefulness:</h4>
+        <p>This is often used to select the rows we are interested in. Imagine having a table of orders and you are searching for a specific customers order within a certain date range. A simple well-formed select operation gets you all the information you want, and you can change the values to target different customers and date ranges.
+        </p>
+    </section>
+
+    <section class="opExample info">
+        <h4>Example:</h4>
+    </section>
+</section>

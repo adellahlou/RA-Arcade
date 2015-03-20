@@ -1,0 +1,31 @@
+<section class="tabSection">
+    <article class="tutorial" id="setsVsBags">
+        <h2 class="tutorialHeader">Sets Vs. Bags</h2>
+        <section class="info">
+            <h4>General Comparison</h4>
+            <p>By now you know that a set is collection that does not allow for duplicates and is unordered. Bags simply allow for duplicates and mostly everything else stays the same. This has a lot of implications for relational algebra when you think about it, since every relational algebra operation goes through extensive processing to make sure that each tuple is unique. Operations such as Unions can now result in relations with duplicate tuples. The largest impact is that on keys and now having to consider whether the same key for a set will work for a bag.
+            </p>
+            <span>Summary: Duplicates | Processing | Keys</span>
+        </section>
+
+        <section class="info">
+            <h4>Mathematical Definitions:</h4>
+            <p>It is actually possible to provide mathematical definitions for relational database concepts using bags or multisets. A bag is similar to a set, but allows multiple occurrences of an element. The basic set operations of intersection, union, Cartesian product can be defined for bags. For a tuple x in relation R, let MR(x) denote the multiplicity of x in R. Then the following relationships will hold:
+            </p>
+            <dl class="writtenSyntax">
+                <dt>intersection</dt>
+                <dd> MR ∩ S (x) = min(MR(x),MS(x))</dd>
+                <dt>difference</dt>
+                <dd>MR−S (x) = max(0,MR(x)−MS(x))</dd>
+                <dt>union</dt>
+                <dd>MR ∪ S (x) = MR(x) + MS(x)</dd>
+                <dt>projection</dt>
+                <dd>πA(R) has the same number of tuples as R</dd>
+                <dt>selection</dt>
+                <dd>MσC(R) (x) = if C(x) then MR(x) else 0</dd>
+                <dt>join</dt>
+                <dd>In R ⋈ S, suppose that tuple x from R matches tuple y from S. Then R ⋈ S will contain MR(x)*MS(y) occurrences of the joined tuple (x,y)</dd>
+            </dl>
+        </section>
+    </article>
+</section>

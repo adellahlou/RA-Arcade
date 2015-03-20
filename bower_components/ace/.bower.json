@@ -1,0 +1,13 @@
+{
+  "name": "ace",
+  "homepage": "https://github.com/ajaxorg/ace",
+  "_release": "385a285c58",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "385a285c586e8510f51f70d875eb8522486afa62"
+  },
+  "_source": "git://github.com/ajaxorg/ace.git",
+  "_target": "master",
+  "_originalSource": "ace"
+}

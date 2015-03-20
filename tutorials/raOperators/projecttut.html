@@ -1,0 +1,85 @@
+<section class="opInfo" id="projectInfo">
+    <h2 class="raHeader">Project</h2>
+    <span class="affectLevel">Tuple Level | Schema Level</span>
+
+    <div class="syntaxdisplay info">
+        <h4 class="syntaxHeader">Syntax: </h4>
+        <span class="writtenSyntax">Written Syntax: π<sub>&lt;attr1, attr2&gt;</sub>(Relation) </span>
+        <span class="arcadeSyntax">Arcade Syntax: Project[attr1, attr2](Relation)</span>
+    </div>
+
+    <section class="opDef info">
+        <h4>Operation Definition</h4>
+        <p class="opDef">This is a unary operation that reduces the attributes of a relation down to a subset of those attributes. This operation requires:
+        </p>
+        <ol class="opReqs">
+            <li>1) L, a subset {a1, a2, a3,…, an} of the attributes of the relation to keep. The included attributes are kept in the resulting relations schema. All of the tuples lose their component values for the attributes not included in L.</li>
+            <li>4) R – a relation to project.</li>
+        </ol>
+    </section>
+
+    <section class="usefulness info">
+        <h4>Usefulness:</h4>
+        <p>This is often used to select specific attributes we are most interested in; to narrow down the table. It is also useful to avoid naming conflicts between relations that you would like to join.</p>
+    </section>
+
+    <section class="opExample info">
+        <h4>Example:</h4>
+        <table class="table table-bordered table-hover" style="display: table;">
+            <thead style="display: table-header-group;">
+                <caption><h3>Bar (Orginal)</h3></caption>
+                <tr>
+                    <th>name</th>
+                    <th>address</th>
+                </tr>
+            </thead>
+            <tbody style="display: table-row-group;">
+                <tr>
+                    <td>Down Under Pub</td>
+                    <td>802 W. Main Street</td>
+                </tr>
+                <tr>
+                    <td>The Edge</td>
+                    <td>108 Morris Street</td>
+                </tr>
+                <tr>
+                    <td>James Joyce Pub</td>
+                    <td>912 W. Main Street</td>
+                </tr>
+                <tr>
+                    <td>Satisfaction</td>
+                    <td>905 W. Main Street</td>
+                </tr>
+                <tr>
+                    <td>Talk of the Town</td>
+                    <td>108 E. Main Street</td>
+                </tr>
+            </tbody>
+        </table>
+                <table class="table table-bordered table-hover" style="display: table;">
+            <thead style="display: table-header-group;">
+                <caption><h3>Project[name](Bar)</h3></caption>
+                <tr>
+                    <th>name</th>
+                </tr>
+            </thead>
+            <tbody style="display: table-row-group;">
+                <tr>
+                    <td>Down Under Pub</td>
+                </tr>
+                <tr>
+                    <td>The Edge</td>
+                </tr>
+                <tr>
+                    <td>James Joyce Pub</td>
+                </tr>
+                <tr>
+                    <td>Satisfaction</td>
+                </tr>
+                <tr>
+                    <td>Talk of the Town</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+</section>

@@ -1,0 +1,31 @@
+{
+  "name": "toddish-popup",
+  "main": "assets/js/jwuery.popup.js",
+  "license": "MIT",
+  "dependencies": {
+    "jquery": "1.6"
+  },
+  "authors": [
+    {
+      "name": "Todd Francis",
+      "email": "todd@toddish.co.uk",
+      "homepage": "http://toddish.co.uk"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Toddish/Popup.git"
+  },
+  "homepage": "https://github.com/Toddish/Popup",
+  "version": "2.2.2",
+  "_release": "2.2.2",
+  "_resolution": {
+    "type": "version",
+    "tag": "2.2.2",
+    "commit": "a479403d25dbc7834b0ce1747fb1542152ad5d99"
+  },
+  "_source": "https://github.com/Toddish/Popup.git",
+  "_target": "~2.2.2",
+  "_originalSource": "https://github.com/Toddish/Popup.git",
+  "_direct": true
+}

@@ -1,0 +1,143 @@
+<section class="opInfo" id="crossJoinInfo">
+    <h2 class="raHeader">Cross Product (Cartesian Product)</h2>
+    <span class="affectLevel">Tuple Level | Schema Level</span>
+
+    <div class="syntaxDisplay info">
+        <h4 class="syntaxHeader">Syntax: </h4>
+        <span class="writtenSyntax">Written Syntax: RelationA X Relation B</span>
+        <span class="arcadeSyntax">Arcade Syntax: RelationA X RelationB</span>
+    </div>
+
+    <section class="opDef info">
+        <h4>Operation Definition</h4>
+        <p class="opDef">This binary operation results in a relation that contains tuples where every tuple of B is appended to each tuple of A (think of distribution). Since relations are sets, the result only has unique tuple. This operation requires:
+        </p>
+        <ol class="opReqs">
+            <li>1) A – a relation</li>
+            <li>2) B – a relation</li>
+        </ol>
+    </section>
+
+    <section class="usefulness info">
+        <h4>Usefulness:</h4>
+        <p>This is useful if need to compare values between two relations (such as in a select) and you need the other tuple appended so you can perform an inter-tuple check. It is also useful for generating permutations.</p>
+    </section>
+
+    <section class="opExample info">
+        <h4>Example:</h4>
+
+
+        <table class="table table-bordered table-hover" style="display: table;">
+            <caption>
+                <h3>Baz (Orginal)</h3>
+            </caption>
+            <thead style="display: table-header-group;">
+                <tr>
+                    <th>A</th>
+                    <th>B</th>
+                    <th>C</th>
+                </tr>
+            </thead>
+            <tbody style="display: table-row-group;">
+                <tr>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>3</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>6</td>
+                    <td>7</td>
+                </tr>
+            </tbody>
+        </table>
+
+
+        <table class="table table-bordered table-hover" style="display: table;">
+            <caption>
+                <h3>Bam (Orginal)</h3>
+            </caption>
+            <thead style="display: table-header-group;">
+                <tr>
+                    <th>D</th>
+                    <th>E</th>
+                </tr>
+            </thead>
+            <tbody style="display: table-row-group;">
+                <tr>
+                    <td>20</td>
+                    <td>30</td>
+                </tr>
+                <tr>
+                    <td>53</td>
+                    <td>62</td>
+                </tr>
+                <tr>
+                    <td>11</td>
+                    <td>10</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <table class="table table-bordered table-hover" style="display: table;">
+            <caption>
+                <h3>Baz X Bam</h3>
+            </caption>
+            <thead style="display: table-header-group;">
+                <tr>
+                    <th>A</th>
+                    <th>B</th>
+                    <th>C</th>
+                    <th>D</th>
+                    <th>E</th>
+                </tr>
+            </thead>
+            <tbody style="display: table-row-group;">
+                <tr>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>3</td>
+                    <td>20</td>
+                    <td>30</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>3</td>
+                    <td>53</td>
+                    <td>62</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>3</td>
+                    <td>11</td>
+                    <td>10</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>6</td>
+                    <td>7</td>
+                    <td>20</td>
+                    <td>30</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>6</td>
+                    <td>7</td>
+                    <td>53</td>
+                    <td>62</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>6</td>
+                    <td>7</td>
+                    <td>11</td>
+                    <td>10</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+
+</section>

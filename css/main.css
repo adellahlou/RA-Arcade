@@ -1,0 +1,426 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 2. v2.0 | 20110126 License: none (public domain) */
+ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+     margin: 0;
+     padding: 0;
+     border: 0;
+     font-size: 100%;
+     font: inherit;
+     vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+     display: block;
+}
+ body {
+     line-height: 1;
+}
+ ol, ul {
+     list-style: none;
+}
+ blockquote, q {
+     quotes: none;
+}
+ blockquote:before, blockquote:after, q:before, q:after {
+     content: '';
+     content: none;
+}
+ table {
+     border-collapse: collapse;
+     border-spacing: 0;
+}
+/****************************** My code after CSS Reset ********************************/
+ *, *:before, *:after {
+     -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+     box-sizing: border-box;
+}
+ body {
+     background-color: white;
+     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+     font-size: 12pt;
+     margin: 0 auto;
+}
+ h1, h2, h3, h4, h5, h6 {
+     margin-bottom: .2em;
+     font-weight: 600;
+}
+ #container {
+     height: 100%;
+     margin: 0 auto;
+}
+ header {
+     float: top;
+     min-height: 15%;
+}
+ footer {
+     display: flex;
+     padding-top: 2em;
+     padding-bottom: 1.5em;
+     margin: 0 auto;
+     justify-content: center;
+}
+h1 { font-size: 2em}
+h2 { font-size: 1.8em}
+h3 { font-size: 1.6em}
+h4 { font-size: 1.4em}
+h5 { font-size: 1.2em}
+
+/************** TABS MENU STYLING **************/
+ #tabs {
+     background: transparent;
+     border: none;
+}
+ #tabs .ui-widget-header {
+     background: transparent;
+     border: none;
+    /*border-bottom: 1px solid #c0c0c0;
+     */
+     border-bottom: 1px solid white;
+     -moz-border-radius: 0px;
+     -webkit-border-radius: 0px;
+     border-radius: 0px;
+}
+ #tabs .ui-tabs-nav .ui-state-default {
+     background: transparent;
+     border: none;
+}
+ #tabs .ui-tabs-nav .ui-state-active {
+    /*background: transparent url(img/uiTabsArrow.png) no-repeat bottom center;
+     */
+     border: none;
+}
+/* Source of white text in tabs issue*/
+ #tabs .ui-tabs-nav .ui-state-default a {
+     color: #ffffff;
+}
+ #tabs .ui-tabs-nav .ui-state-active a {
+    /*color: #333333;
+    */
+     color:#bdc3c7;
+}
+ @import url(http://fonts.googleapis.com/css?family=Open+Sans:700);
+ .ui-state-default li {
+     background: #2c3e50;
+    /*background: #EF6555 background: #f96e5b;
+     */
+}
+ #tabs {
+    /*background: #f96e5b;
+    */
+     background: #2c3e50;
+     width: auto;
+}
+ #tabs:first-child ul {
+     list-style: none;
+     margin: 0;
+     padding: 0;
+     line-height: 1;
+     display: block;
+     zoom: 1;
+}
+ #tabs:first-child ul:after {
+     content: " ";
+     display: block;
+     font-size: 0;
+     height: 0;
+     clear: both;
+     visibility: hidden;
+}
+ #tabs ul:first-child li {
+     display: inline-block;
+     padding: 0;
+     margin: 0;
+}
+ #tabs.align-right ul li {
+     float: right;
+}
+ #tabs.align-center ul {
+     text-align: center;
+}
+ #tabs ul:first-child li a {
+     color: #ffffff;
+     text-decoration: none;
+     display: block;
+     padding: 15px 25px;
+     font-family: 'Open Sans', sans-serif;
+     font-weight: 700;
+     text-transform: uppercase;
+     font-size: 14px;
+     position: relative;
+     -webkit-transition: color .25s;
+     -moz-transition: color .25s;
+     -ms-transition: color .25s;
+     -o-transition: color .25s;
+     transition: color .25s;
+}
+ #tabs ul li a:hover {
+     color: #333333;
+}
+ #tabs ul li a:hover:before {
+     width: 100%;
+}
+ #tabs ul li a:after {
+     content: "";
+     display: block;
+     position: absolute;
+     right: -3px;
+     top: 19px;
+     height: 6px;
+     width: 6px;
+     background: #ffffff;
+     opacity: .5;
+}
+ #tabs:first-child ul:first-child li a:before {
+     content: "";
+     display: block;
+     position: absolute;
+     left: 0;
+     bottom: 0;
+     height: 3px;
+     width: 0;
+     background: #333333;
+     -webkit-transition: width .25s;
+     -moz-transition: width .25s;
+     -ms-transition: width .25s;
+     -o-transition: width .25s;
+     transition: width .25s;
+}
+ #tabs ul li.last > a:after, #tabs ul li:last-child > a:after {
+     display: none;
+}
+ #tabs ul li.active a {
+     color: #333333;
+}
+ #tabs ul li.active a:before {
+     width: 100%;
+}
+ #tabs.align-right li.last > a:after, #tabs.align-right li:last-child > a:after {
+     display: block;
+}
+ #tabs.align-right li:first-child a:after {
+     display: none;
+}
+ @media screen and (max-width: 768px) {
+     #tabs ul li {
+         float: none;
+         display: block;
+    }
+     #tabs ul li a {
+         width: 100%;
+         -moz-box-sizing: border-box;
+         -webkit-box-sizing: border-box;
+         box-sizing: border-box;
+         border-bottom: 1px solid #fb998c;
+    }
+     #tabs ul li.last > a, #tabs ul li:last-child > a {
+         border: 0;
+    }
+     #tabs ul li a:after {
+         display: none;
+    }
+     #tabs ul li a:before {
+         display: none;
+    }
+}
+/******************* * raTabs menu styling ********************/
+ .ui-tabs-vertical {
+     width: auto;
+}
+ .ui-tabs-vertical .ui-tabs-nav {
+     padding: .2em .1em .2em .2em;
+     float: left;
+     width: auto;
+}
+ .ui-tabs-vertical .ui-tabs-nav li {
+     clear: left;
+     width: 100%;
+     border-bottom-width: 1px !important;
+     border-right-width: 0 !important;
+     margin: 0 -1px .2em 0;
+}
+ .ui-tabs-vertical .ui-tabs-nav li a {
+     display: block;
+}
+ .ui-tabs-vertical .ui-tabs-nav li.ui-tabs-active {
+     padding-bottom: 0;
+     padding-right: .1em;
+     border-right-width: 1px;
+     border-right-width: 1px;
+}
+ .ui-tabs-vertical .ui-tabs-panel {
+     padding: 1em;
+     float: right;
+     width: 40em;
+}
+ #raTabs .ui-tabs-nav .ui-state-default a {
+     color: white;
+}
+/****************** * Tutorial Styling *******************/
+ .tutorial {
+     background: #ffffff;
+     padding: 10px 6px;
+}
+.info {
+     display: block;
+     background: #ECDFD7;
+     padding: .5em 1em;
+     margin: 1em;
+}
+ section#raTutorial #raTabs ul {
+     background: #142323;
+     color: white;
+     float: left;
+}
+ section#raTutorial #raTabs .ui-tabs-panel {
+    /* float: right;
+    */
+}
+.tutorialHeader, .raHeader {
+     color: #253e66;
+     font-family: 'Open Sans', sans-serif;
+     font-size: 34px;
+     font-weight: 300;
+     line-height: 40px;
+     margin: 0 0 .5em 1em;
+}
+h4 {
+     color: #F90B6D;
+     font-family: 'Open Sans', sans-serif;
+     font-size: 28px;
+     font-weight: 300;
+     line-height: 32px;
+     margin: 0 0 14px;
+}
+ p, dd, dt {
+     color: #222;
+     font-family: 'Open Sans', sans-serif;
+     font-size: 20px;
+     font-weight: 400;
+     line-height: 1.2em;
+     margin: 0 0 14px;
+}
+ .tabSection .tutorial dt {
+     color: #253E66;
+     text-transform: uppercase;
+     text-align: left;
+     margin-bottom: .5em;
+}
+ .tabSection .tutorial dd {
+     margin-left: 1em;
+}
+ span.arcadeSyntax, span.writtenSyntax, span.affectLevel {
+     display: block;
+     line-height: 1.35em;
+}
+ section.opInfo span.affectLevel {
+     margin-left: 2em;
+}
+/****************** Game Containers ********************/
+ .navbar-fixed-bottom .container {
+     padding-top: 10px;
+     line-height: 1em;
+}
+ #graph .modal-body {
+     text-align: center;
+}
+ #graph-staging {
+     position: absolute;
+     top: -220px;
+     left: -220px;
+     width: 200px;
+     height: 200px;
+}
+ #editor {
+     position: absolute;
+     top: 0;
+     right: 0;
+     bottom: 0;
+     left: 0;
+     height: 6em;
+}
+ #relationView {
+     margin-bottom: 2em;
+    /*max-height: 10em;
+    */
+}
+ #relationView h1 {
+     margin-top: 0;
+}
+ #relationView .table {
+     width: auto;
+     background: #bdc3c7;
+}
+ .ace_marker-layer .relalg_error {
+     position: absolute;
+     z-index: 4;
+     -moz-box-sizing: border-box;
+     -webkit-box-sizing: border-box;
+     box-sizing: border-box;
+     border-bottom: 2px dotted red;
+}
+ .actions li + li {
+     margin-top: 5px;
+}
+ svg {
+     font-size: 14px;
+     font-family: Georgia, serif;
+}
+ div#levelListContainer {
+     padding: 1em .5em;
+}
+ div#levelListContainer ul{
+     display: block;
+}
+ ul#levelLists > li{
+     display: block;
+     width:100%;
+     margin: 100em .2em;
+}
+ul#levelLists > li span{
+    width: 100%;
+}
+
+ #gameContent #questionDisplay {
+     padding: .1em .1em;
+}
+ ul#datasetList li{
+     display: inline;
+     margin: 0em .2em;
+     padding: .2em .4em;
+     background: white;
+}
+ ul#datasetList li:hover{
+     background: #95a5a6;
+}
+ div#set-selector {
+     margin: 1em 0em;
+     padding: .8em .5em;
+     background: #C29D4E;
+}
+ div#relationList {
+     margin: 1em 0em;
+     padding: .8em .5em;
+     background: #C29D4E;
+}
+ div.directive {
+     margin: 1em 0em;
+     padding: .8em .5em;
+     background: #C29D4E;
+}
+ div.directive h3{
+     font-size: 18px;
+}
+
+th{
+    font-weight: 600;
+    background:black;
+    color:white;
+}
+.popup_content, .popup_content h1, .popup_content h2, .popup_content h3, .popup_content h4, .popup_content p, .popup_content table, .popup_content .info, .popup_content tr td{
+    font-size: 10pt;
+    margin: 2px 2px;
+    line-height: 11pt;
+    padding : 2px 2px;
+}
+
+ 

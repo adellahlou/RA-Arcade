@@ -1,0 +1,96 @@
+<section class="opInfo" id="renameInfo">
+    <h2 class="raHeader">Rename</h2>
+    <span class="affectLevel">Schema-Level</span>
+
+    <div class="syntaxDisplay info">
+        <h4 class="syntaxHeader">Syntax: </h4>
+        <span class="writtenSyntax">Written Syntax: ρ<sub>&lt;newname1, newname2,...&gt;</sub>(Relations)</span>
+        <span class="arcadeSyntax">Arcade Syntax: Rename[oldname/newname](Relation)</span>
+    </div>
+
+    <section class="opDef info">
+        <h4>Operation Definition</h4>
+        <p class="opDef">This is a unary operator that renames attributes of a relation. This is important for other operators such as Natural Join, which only joins on similarly named attributes. This operation requires:
+        </p>
+        <ol class="opReqs">
+            <li>1) L, a list of new names for the attributes of relation R, given in listed display order.</li>
+            <li>2) R – a relation to sort</li>
+        </ol>
+    </section>
+
+    <section class="usefulness info">
+        <h4>Usefulness:</h4>
+        <p>As stated, this operator is important for other operators such as Natural Joins, which require similar named attributes. It is also useful for display and readability purposes.
+        </p>
+    </section>
+
+    <section class="opExample info">
+        <h4>Example:</h4>
+        <table class="table table-bordered table-hover" style="display: table;">
+            <thead style="display: table-header-group;">
+                <caption>
+                    <h3>Bar (Orginal)</h3>
+                </caption>
+                <tr>
+                    <th>name</th>
+                    <th>address</th>
+                </tr>
+            </thead>
+            <tbody style="display: table-row-group;">
+                <tr>
+                    <td>Down Under Pub</td>
+                    <td>802 W. Main Street</td>
+                </tr>
+                <tr>
+                    <td>The Edge</td>
+                    <td>108 Morris Street</td>
+                </tr>
+                <tr>
+                    <td>James Joyce Pub</td>
+                    <td>912 W. Main Street</td>
+                </tr>
+                <tr>
+                    <td>Satisfaction</td>
+                    <td>905 W. Main Street</td>
+                </tr>
+                <tr>
+                    <td>Talk of the Town</td>
+                    <td>108 E. Main Street</td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-bordered table-hover" style="display: table;">
+            <thead style="display: table-header-group;">
+                <caption>
+                    <h3>Rename[name/barName](Bar)</h3>
+                </caption>
+                <tr>
+                    <th>barName</th>
+                    <th>address</th>
+                </tr>
+            </thead>
+            <tbody style="display: table-row-group;">
+                <tr>
+                    <td>Down Under Pub</td>
+                    <td>802 W. Main Street</td>
+                </tr>
+                <tr>
+                    <td>The Edge</td>
+                    <td>108 Morris Street</td>
+                </tr>
+                <tr>
+                    <td>James Joyce Pub</td>
+                    <td>912 W. Main Street</td>
+                </tr>
+                <tr>
+                    <td>Satisfaction</td>
+                    <td>905 W. Main Street</td>
+                </tr>
+                <tr>
+                    <td>Talk of the Town</td>
+                    <td>108 E. Main Street</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+</section>

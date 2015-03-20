@@ -1,0 +1,91 @@
+<section class="opInfo" id="sortInfo">
+    <h2 class="raHeader">Sort</h2>
+    <span class="affectLevel">Tuple Level</span>
+
+    <div class="syntaxDisplay info">
+        <h4 class="syntaxHeader">Syntax: </h4>
+        <span class="writtenSyntax">Written Syntax: RelationA τ RelationB</span>
+        <span class="arcadeSyntax">
+            Arcade Syntax: <span class="label label-danger">Currently Not Supported</span>
+        </span>
+    </div>
+
+    <section class="opDef info">
+        <h4>Operation Definition</h4>
+        <p class="opDef">This is a unary operator that rearranges the list order of the tuples. Note that this operation does not change the underlying representation and is really for visualization purposes only. This operation requires:
+        </p>
+        <ol class="opReqs">
+            <li>1) L, a subset
+                &lt;a1, a2, a3,…, an&gt;of the attributes of the relation to sort the tuples by. The tuples are first sorted in ascending order according to their a1 component by using the concept of greater than (&gt;) and lesser than operators (&lt;). Ties within a1 are broken using a2 component values and so forth for further ties.</li>
+            <li></li>
+        </ol>
+    </section>
+
+    <section class="usefulness info">
+        <h4>Usefulness:</h4>
+        <p>Used typically for display and readability purposes. Since relations are sets, ordering is usually not considered.</p>
+    </section>
+
+    <section class="opExample info">
+        <h4>Example:</h4>
+        <table class="table table-bordered table-hover" style="display: table;">
+            <caption>
+                <h3>Bam (Orginal)</h3>
+            </caption>
+            <thead style="display: table-header-group;">
+                <tr>
+                    <th>D</th>
+                    <th>E</th>
+                </tr>
+            </thead>
+            <tbody style="display: table-row-group;">
+                <tr>
+                    <td>21</td>
+                    <td>30</td>
+                </tr>
+                <tr>
+                    <td>20</td>
+                    <td>30</td>
+                </tr>
+                <tr>
+                    <td>53</td>
+                    <td>62</td>
+                </tr>
+                <tr>
+                    <td>11</td>
+                    <td>10</td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-bordered table-hover" style="display: table;">
+            <caption>
+                <h3>Sort[E, D](Bar)</h3>
+            </caption>
+            <thead style="display: table-header-group;">
+                <tr>
+                    <th>D</th>
+                    <th>E</th>
+                </tr>
+            </thead>
+            <tbody style="display: table-row-group;">
+                <tr>
+                    <td>11</td>
+                    <td>10</td>
+                </tr>
+                <tr>
+                    <td>20</td>
+                    <td>30</td>
+                </tr>
+                <tr>
+                    <td>21</td>
+                    <td>30</td>
+                </tr>
+                <tr>
+                    <td>53</td>
+                    <td>62</td>
+                </tr>
+
+            </tbody>
+        </table>
+    </section>
+</section>

@@ -1,0 +1,97 @@
+<section class="opInfo" id="naturalJoinInfo">
+    <h2 class="raHeader">Natural Join</h2>
+    <span class="affectLevel">Tuple Level | Schema Level</span>
+
+    <div class="syntaxDisplay info">
+        <h4 class="syntaxHeader">Syntax: </h4>
+        <span class="writtenSyntax">Written Syntax: RelationA ⋈ RelationB</span>
+        <span class="arcadeSyntax">Arcade Syntax: RelationA Join RelationB</span>
+    </div>
+
+    <section class="opDef info">
+        <h4>Operation Definition</h4>
+        <p class="opDef">
+            This binary operation results are a little more complex than the others. First it makes a list L of which attributes have the same type and name between both relations. It then iterates through the cross join of A and B, selecting only the tuples where the component value is similar between the two relations for all attributes in L. It then projects out L, so that there is no longer a pair of matching attributes in the resulting relation. Since relations are sets, the result only has unique tuple. This operation requires:
+        </p>
+        <ol class="opReqs">
+            <li>1) A – a relation. It is desirable to have at least one similar attribute header to B.</li>
+            <li>2) B – a relation. It is desirable to have at least one similar attribute header to A.</li>
+        </ol>
+    </section>
+
+    <section class="usefulness info">
+        <h4>Usefulness:</h4>
+        <p>This is one of the most useful operators, though it is simply a unique combination of other operators. Similar to Cross Join, a Natural Join is useful for when you need to search through pair’s/combinations of tuples from different relationships for attributes values that are spread across different relations. The example below illustrates this usefulness more clearly. For reference, Natural Join is actually equivalent to: <span class="writtenSyntax">Project[All A – Bi] (Select[All Ai = Bi](A CrossJoin B) )</span>
+
+        </p>
+    </section>
+
+    <section class="opExample info">
+        <h4>Example:</h4>
+
+        <table class="table table-bordered table-hover" style="display: table;">
+            <caption>
+                <h3>Foo (Orginal)</h3>
+            </caption>
+            <thead style="display: table-header-group;">
+                <tr>
+                    <th>A</th>
+                    <th>B</th>
+                </tr>
+            </thead>
+            <tbody style="display: table-row-group;">
+                <tr>
+                    <td>1</td>
+                    <td>2</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>4</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <table class="table table-bordered table-hover" style="display: table;">
+            <caption>
+                <h3>Baz (Orginal)</h3>
+            </caption>
+            <thead style="display: table-header-group;">
+                <tr>
+                    <th>A</th>
+                    <th>B</th>
+                    <th>C</th>
+                </tr>
+            </thead>
+            <tbody style="display: table-row-group;">
+                <tr>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>3</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>6</td>
+                    <td>7</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <table class="table table-bordered table-hover" style="display: table;">
+            <caption><h3>Foo Join Baz</h3></caption>
+            <thead style="display: table-header-group;">
+                <tr>
+                    <th>A</th>
+                    <th>B</th>
+                    <th>C</th>
+                </tr>
+            </thead>
+            <tbody style="display: table-row-group;">
+                <tr>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>3</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+</section>
