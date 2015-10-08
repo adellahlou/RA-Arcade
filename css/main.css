@@ -1,14 +1,16 @@
 /* http://meyerweb.com/eric/tools/css/reset/ 2. v2.0 | 20110126 License: none (public domain) */
- html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+/*html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
      margin: 0;
      padding: 0;
      border: 0;
      font-size: 100%;
      font: inherit;
      vertical-align: baseline;
-}
+}*/
+
+
 /* HTML5 display-role reset for older browsers */
- article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+ /*article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
      display: block;
 }
  body {
@@ -28,30 +30,40 @@
      border-collapse: collapse;
      border-spacing: 0;
 }
+
+*/
 /****************************** My code after CSS Reset ********************************/
- *, *:before, *:after {
+ /**, *:before, *:after {
      -webkit-box-sizing: border-box;
      -moz-box-sizing: border-box;
      box-sizing: border-box;
-}
+}*/
+
  body {
-     background-color: white;
+     background-color: #fcfcfc;
      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
      font-size: 12pt;
      margin: 0 auto;
 }
+
+/*
  h1, h2, h3, h4, h5, h6 {
      margin-bottom: .2em;
      font-weight: 600;
 }
+*/
+
+
  #container {
      height: 100%;
      margin: 0 auto;
 }
+
  header {
      float: top;
      min-height: 15%;
 }
+
  footer {
      display: flex;
      padding-top: 2em;
@@ -59,17 +71,19 @@
      margin: 0 auto;
      justify-content: center;
 }
-h1 { font-size: 2em}
+
+/*h1 { font-size: 2em}
 h2 { font-size: 1.8em}
 h3 { font-size: 1.6em}
 h4 { font-size: 1.4em}
-h5 { font-size: 1.2em}
+h5 { font-size: 1.2em}*/
 
 /************** TABS MENU STYLING **************/
  #tabs {
      background: transparent;
      border: none;
 }
+
  #tabs .ui-widget-header {
      background: transparent;
      border: none;
@@ -91,7 +105,7 @@ h5 { font-size: 1.2em}
 }
 /* Source of white text in tabs issue*/
  #tabs .ui-tabs-nav .ui-state-default a {
-     color: #ffffff;
+     color: #fcfcfc;
 }
  #tabs .ui-tabs-nav .ui-state-active a {
     /*color: #333333;
@@ -100,14 +114,14 @@ h5 { font-size: 1.2em}
 }
  @import url(http://fonts.googleapis.com/css?family=Open+Sans:700);
  .ui-state-default li {
-     background: #2c3e50;
+     background: #383D3B;
     /*background: #EF6555 background: #f96e5b;
      */
 }
  #tabs {
     /*background: #f96e5b;
     */
-     background: #2c3e50;
+     background: #383D3B;
      width: auto;
 }
  #tabs:first-child ul {
@@ -366,6 +380,7 @@ h4 {
      font-family: Georgia, serif;
 }
  div#levelListContainer {
+     background-color: #FFFAE3;
      padding: 1em .5em;
 }
  div#levelListContainer ul{
@@ -395,17 +410,17 @@ ul#levelLists > li span{
  div#set-selector {
      margin: 1em 0em;
      padding: .8em .5em;
-     background: #C29D4E;
+     background: #F7567C;
 }
  div#relationList {
      margin: 1em 0em;
      padding: .8em .5em;
-     background: #C29D4E;
+     background: #F7567C;
 }
  div.directive {
      margin: 1em 0em;
      padding: .8em .5em;
-     background: #C29D4E;
+     background: #BEE9E8;
 }
  div.directive h3{
      font-size: 18px;
@@ -423,4 +438,7 @@ th{
     padding : 2px 2px;
 }
 
+div#core {
+    background-color: #FFFAE3;
+}
  
