@@ -59,7 +59,7 @@
 
             <!-- Functional Dependencies component, currently non-functional-->
             <section id="functionalDepTutorial" style="background:white;padding:10px 5px;" class="tabSection tutorial">
-                <h2 class="tutorialHeader">Functional Dependencies <span class="label label-danger">Currently Not Supported</span></h2>
+                <h2 class="tutorialHeader">Functional Dependencies <span class="label label-danger">Currently in Progress</span></h2>
                 
                 <div ng-controller="SchemaCtrl">
                     <div class="container">
@@ -154,23 +154,31 @@
             <section id="raTosql" class="tabSection">
             </section>
 
-            <section id="gameContent" class="tabSection">
+            
+            
+            <section id="gameContent" class="tabSection container">
                 <!-- Used as the unifying component that changes the game mode -->
                 <div id="arcadeController">
-                    <!-- Buttons To Switch Between Modes -->
-                    <div class="row">
-                        <div class="btn-group btn-group-md">
-                            <button class="btn btn-default" id="playgroundButton">Playground</button>
-                            <button class="btn btn-default" id="arcadeButton">Arcade</button>
-                        </div>
-                    </div>
+                    
                     <!-- Used as main point for hints, questions, instructions, etc. -->
-                    <div class="directive">
+                    <div class="jumbotron directive">
                     </div>
 
+                    <!-- Buttons To Switch Between Modes -->
+                    <div class="row">
+                        <div class="text-center">
+                            <div class="btn-group btn-group-lg">
+                                <button class="btn btn-default" id="playgroundButton">Playground</button>
+                                <button class="btn btn-default" id="arcadeButton">Arcade</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+                    <div id="core">
                     <!-- UI for selecting levels -->
-                    <div id="levelListContainer">
-                        <ul id="levelLists">
+                    <div id="levelListContainer" class="row text-center">
+                        <ul id="levelLists" >
                             <li id="beginnerList">
                                 <h3 data-list="beginner" class="levelListHeader">Beginner</h3>
                                 <ul class="levelList beginner">
@@ -191,7 +199,7 @@
                 </div>
 
 
-
+                
                 <!-- UI for choosing current Data Set -->
                 <div id="set-selector">
                     <span>Datasets:</span>
@@ -266,6 +274,7 @@
                     </div>
                 </div>
                 <div id="graph-staging"></div>
+                </div>
             </section>
         </div>
     </div>
